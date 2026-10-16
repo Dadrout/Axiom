@@ -1,0 +1,187 @@
+body {
+  isolation: isolate;
+}
+.star-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: #000;
+}
+.star-background > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+}
+.star-background > div::after {
+  content: "";
+  position: absolute;
+  top: 2000px;
+  width: inherit;
+  height: inherit;
+  box-shadow: inherit;
+}
+.stars-small {
+  width: 1px;
+  height: 1px;
+  animation: stars-drift 50s linear infinite;
+  box-shadow: 16.49vw 1412px #fff,
+    41.80vw 576px #fff,
+    47.91vw 442px #fff,
+    98.97vw 972px #fff,
+    80.79vw 1049px #fff,
+    18.36vw 1080px #fff,
+    23.61vw 6px #fff,
+    1.41vw 1910px #fff,
+    58.54vw 141px #fff,
+    14.49vw 1538px #fff,
+    23.23vw 476px #fff,
+    69.39vw 894px #fff,
+    99.76vw 1512px #fff,
+    77.07vw 833px #fff,
+    61.59vw 69px #fff,
+    95.68vw 1106px #fff,
+    49.76vw 237px #fff,
+    64.88vw 1920px #fff,
+    36.84vw 317px #fff,
+    74.10vw 181px #fff,
+    12.49vw 1900px #fff,
+    1.95vw 329px #fff,
+    55.20vw 702px #fff,
+    40.13vw 309px #fff,
+    18.69vw 76px #fff,
+    46.99vw 1679px #fff,
+    23.49vw 1597px #fff,
+    19.74vw 1379px #fff,
+    96.88vw 1830px #fff,
+    65.80vw 1944px #fff,
+    76.28vw 1189px #fff,
+    98.88vw 145px #fff,
+    12.25vw 975px #fff,
+    55.89vw 794px #fff,
+    20.11vw 1890px #fff,
+    14.62vw 1097px #fff,
+    40.96vw 747px #fff,
+    95.45vw 1026px #fff,
+    38.58vw 992px #fff,
+    38.66vw 54px #fff,
+    83.41vw 325px #fff,
+    71.81vw 1015px #fff,
+    0.28vw 143px #fff,
+    55.04vw 1532px #fff,
+    52.22vw 1170px #fff,
+    60.89vw 1139px #fff,
+    98.00vw 230px #fff,
+    18.07vw 348px #fff,
+    62.65vw 1707px #fff,
+    92.71vw 709px #fff,
+    76.19vw 1904px #fff,
+    30.66vw 211px #fff,
+    16.87vw 1890px #fff,
+    81.37vw 1591px #fff,
+    42.87vw 327px #fff,
+    68.34vw 1384px #fff,
+    51.97vw 1347px #fff,
+    95.83vw 833px #fff,
+    91.78vw 334px #fff,
+    96.14vw 1209px #fff,
+    1.43vw 709px #fff,
+    49.09vw 769px #fff,
+    66.69vw 1917px #fff,
+    87.61vw 332px #fff,
+    56.18vw 899px #fff,
+    80.53vw 1584px #fff,
+    74.14vw 117px #fff,
+    83.70vw 106px #fff,
+    85.33vw 1348px #fff,
+    28.99vw 859px #fff,
+    24.86vw 807px #fff,
+    6.95vw 692px #fff,
+    64.54vw 299px #fff,
+    98.34vw 1527px #fff,
+    72.85vw 101px #fff,
+    25.22vw 1963px #fff,
+    65.03vw 1866px #fff,
+    72.86vw 57px #fff,
+    95.28vw 1842px #fff,
+    83.83vw 1628px #fff,
+    15.38vw 755px #fff,
+    60.14vw 872px #fff,
+    48.45vw 1848px #fff,
+    84.93vw 630px #fff,
+    13.88vw 1205px #fff,
+    27.60vw 1573px #fff,
+    72.08vw 783px #fff,
+    68.53vw 1953px #fff,
+    71.57vw 541px #fff,
+    59.37vw 1318px #fff,
+    24.98vw 1957px #fff,
+    58.43vw 526px #fff,
+    68.31vw 1539px #fff,
+    95.87vw 1854px #fff,
+    13.85vw 290px #fff,
+    9.48vw 192px #fff,
+    18.67vw 1314px #fff,
+    44.69vw 288px #fff,
+    7.19vw 243px #fff,
+    65.53vw 259px #fff;
+}
+.stars-medium {
+  width: 2px;
+  height: 2px;
+  animation: stars-drift 100s linear infinite;
+  box-shadow: 67.29vw 928px #fff,
+    84.67vw 316px #fff,
+    83.15vw 1063px #fff,
+    43.64vw 1402px #fff,
+    64.56vw 302px #fff,
+    53.03vw 1059px #fff,
+    54.39vw 699px #fff,
+    48.15vw 1936px #fff,
+    55.85vw 1031px #fff,
+    42.63vw 543px #fff,
+    42.67vw 255px #fff,
+    28.44vw 36px #fff,
+    26.19vw 624px #fff,
+    47.07vw 1379px #fff,
+    18.62vw 673px #fff,
+    33.43vw 1490px #fff,
+    63.31vw 907px #fff,
+    17.56vw 1456px #fff,
+    86.02vw 732px #fff,
+    69.50vw 991px #fff,
+    22.23vw 1334px #fff,
+    51.21vw 1996px #fff,
+    60.32vw 499px #fff,
+    72.17vw 1004px #fff,
+    86.00vw 162px #fff,
+    37.67vw 156px #fff,
+    35.34vw 307px #fff,
+    80.74vw 1570px #fff,
+    56.64vw 598px #fff,
+    55.09vw 1778px #fff;
+}
+.stars-large {
+  width: 3px;
+  height: 3px;
+  animation: stars-drift 150s linear infinite;
+  box-shadow: 71.27vw 862px #fff,
+    22.31vw 769px #fff,
+    39.20vw 1928px #fff,
+    85.68vw 665px #fff,
+    51.24vw 866px #fff,
+    79.80vw 1621px #fff,
+    13.09vw 1117px #fff,
+    6.95vw 889px #fff,
+    62.44vw 476px #fff,
+    1.07vw 308px #fff;
+}
+@keyframes stars-drift {
+  from { transform: translateY(0); }
+  to { transform: translateY(-2000px); }
+}

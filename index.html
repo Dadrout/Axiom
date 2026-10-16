@@ -1,0 +1,862 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#030305" />
+    <meta
+      name="description"
+      content="An interactive atlas of physics. Explore invisible laws and work with numbers in a simple calculator."
+    />
+    <title>AXIOM — An Interactive Atlas of Physics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Outfit:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="stars.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="star-background" aria-hidden="true">
+      <div class="stars-small"></div>
+      <div class="stars-medium"></div>
+      <div class="stars-large"></div>
+    </div>
+    <a class="skip" href="#experiment">Skip to the calculator</a>
+    <header class="nav">
+      <a class="brand" href="#explore">AXIOM</a>
+      <nav id="navigation" aria-label="Main navigation">
+        <a href="#topics">Topics</a>
+        <a href="#principles">Principles</a>
+        <a href="#physicists">Physicists</a>
+        <a href="#notes">Experiment</a>
+        <a href="#simulations">Simulations</a>
+        <a href="#experiment">Calculator</a>
+      </nav>
+    </header>
+    <main>
+      <section id="explore" class="hero">
+        <div class="earth-backdrop">
+          <video
+            class="earth-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="assets/earth-poster.jpg"
+            aria-label="Rotating Earth in space"
+          >
+            <source src="assets/earth-hd.mp4" type="video/mp4" />
+            Your browser does not support video.
+          </video>
+        </div>
+        <div class="hero-copy">
+          <h1>Physics, from<br />the ground up.</h1>
+          <div class="hero-bottom">
+            <p>
+              Understand motion, energy, and matter through clear explanations
+              and experiments you can try yourself.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#topics"
+                >Explore the topics <span>↗</span></a
+              ><a class="text-link" href="#simulations"
+                >Try a simulation <span>↓</span></a
+              >
+            </div>
+          </div>
+        </div>
+        <a
+          class="earth-credit"
+          href="https://www.pexels.com/video/earth-rotating-5921369/"
+          >Earth video: Pexels</a
+        >
+      </section>
+      <section
+        id="topics"
+        class="section topics"
+        aria-labelledby="topics-title"
+      >
+        <div class="section-heading">
+          <h2 id="topics-title">Start with the fundamentals.</h2>
+          <p>
+            Switch between topics to find simple explanations, formulas, and
+            examples.
+          </p>
+        </div>
+        <div class="topic-switcher">
+          <div class="topic-nav" role="group" aria-label="Physics topics">
+            <button
+              class="topic-button active"
+              type="button"
+              data-panel="panel-forces"
+              aria-controls="panel-forces"
+              aria-pressed="true"
+            >
+              Newton&#x27;s laws
+            </button>
+            <button
+              class="topic-button"
+              type="button"
+              data-panel="panel-energy"
+              aria-controls="panel-energy"
+              aria-pressed="false"
+            >
+              Energy
+            </button>
+            <button
+              class="topic-button"
+              type="button"
+              data-panel="panel-waves"
+              aria-controls="panel-waves"
+              aria-pressed="false"
+            >
+              Waves
+            </button>
+            <button
+              class="topic-button"
+              type="button"
+              data-panel="panel-electricity"
+              aria-controls="panel-electricity"
+              aria-pressed="false"
+            >
+              Electricity
+            </button>
+            <button
+              class="topic-button"
+              type="button"
+              data-panel="panel-heat"
+              aria-controls="panel-heat"
+              aria-pressed="false"
+            >
+              Thermodynamics
+            </button>
+          </div>
+          <section
+            class="topic-panel active"
+            id="panel-forces"
+            aria-labelledby="heading-forces"
+          >
+            <h3 id="heading-forces" class="topic-heading">
+              Forces &amp; motion
+            </h3>
+            <div class="law-cards">
+              <article class="law-card">
+                <h4>First law: inertia</h4>
+                <p>
+                  An object stays at rest or keeps moving in a straight line at
+                  constant speed unless a net external force acts on it.
+                </p>
+                <div class="law-formula">ΣF = 0 → a = 0</div>
+                <p class="law-example">
+                  <strong>Example</strong>A book resting on a table stays still:
+                  the table's upward force balances gravity.
+                </p>
+              </article>
+              <article class="law-card">
+                <h4>Second law: acceleration</h4>
+                <p>
+                  For an object with constant mass, acceleration depends on the
+                  net force. More force means more acceleration; more mass means
+                  less acceleration for the same force.
+                </p>
+                <div class="law-formula">ΣF = ma</div>
+                <p class="law-example">
+                  <strong>Example</strong>A net force of 10 N acting on a 2 kg
+                  object gives it an acceleration of 5 m/s².
+                </p>
+              </article>
+              <article class="law-card">
+                <h4>Third law: action &amp; reaction</h4>
+                <p>
+                  When one object exerts a force on another, the second exerts
+                  an equal force in the opposite direction on the first. These
+                  forces act on different objects.
+                </p>
+                <div class="law-formula">F<sub>AB</sub> = −F<sub>BA</sub></div>
+                <p class="law-example">
+                  <strong>Example</strong>When you jump, you push down on the
+                  ground and the ground pushes up on you.
+                </p>
+              </article>
+            </div>
+          </section>
+          <section
+            class="topic-panel"
+            id="panel-energy"
+            aria-labelledby="heading-energy"
+          >
+            <h3 id="heading-energy" class="topic-heading">Energy &amp; work</h3>
+            <div class="law-cards">
+              <article class="law-card">
+                <h4>Kinetic energy</h4>
+                <p>
+                  Moving objects carry kinetic energy. For the same mass,
+                  doubling the speed gives four times the kinetic energy.
+                </p>
+                <div class="law-formula">Eₖ = ½mv²</div>
+                <p class="law-example">
+                  <strong>Example</strong>A 2 kg ball moving at 3 m/s has 9 J of
+                  kinetic energy.
+                </p>
+              </article>
+              <article class="law-card">
+                <h4>Gravitational potential energy</h4>
+                <p>
+                  Near Earth’s surface, raising an object stores energy. Here, m
+                  is mass, g is gravitational acceleration, and h is height
+                  above a chosen reference.
+                </p>
+                <div class="law-formula">Eₚ = mgh</div>
+                <p class="law-example">
+                  <strong>Example</strong>Lifting a 1 kg book by 2 m stores
+                  about 19.6 J of energy.
+                </p>
+              </article>
+              <article class="law-card">
+                <h4>Work done by a force</h4>
+                <p>
+                  A constant force transfers energy when an object moves. Only
+                  the component of force along the displacement does work.
+                </p>
+                <div class="law-formula">W = Fd cos θ</div>
+                <p class="law-example">
+                  <strong>Example</strong>Pushing a box 3 m with a 10 N force
+                  along its motion transfers 30 J.
+                </p>
+              </article>
+            </div>
+          </section>
+          <section
+            class="topic-panel"
+            id="panel-waves"
+            aria-labelledby="heading-waves"
+          >
+            <h3 id="heading-waves" class="topic-heading">Waves &amp; sound</h3>
+            <div class="law-cards">
+              <article class="law-card">
+                <h4>Wave speed</h4>
+                <p>
+                  A wave carries a disturbance. Its speed equals its frequency
+                  multiplied by its wavelength.
+                </p>
+                <div class="law-formula">v = fλ</div>
+                <p class="law-example">
+                  <strong>Example</strong>A 2 Hz wave with a wavelength of 3 m
+                  travels at 6 m/s.
+                </p>
+              </article>
+              <article class="law-card">
+                <h4>Frequency &amp; period</h4>
+                <p>
+                  Frequency counts cycles per second. The period is the time for
+                  one cycle; higher frequency means a shorter period.
+                </p>
+                <div class="law-formula">T = 1/f</div>
+                <p class="law-example">
+                  <strong>Example</strong>A 5 Hz wave completes one cycle every
+                  0.2 seconds.
+                </p>
+              </article>
+              <article class="law-card">
+                <h4>Sound needs a medium</h4>
+                <p>
+                  Sound travels through vibrations in matter, such as air,
+                  water, or metal. It cannot travel through a vacuum.
+                </p>
+                <div class="law-formula">v ≈ 343 m/s</div>
+                <p class="law-example">
+                  <strong>Example</strong>In air at about 20°C, sound travels
+                  roughly 343 m in one second.
+                </p>
+              </article>
+            </div>
+          </section>
+          <section
+            class="topic-panel"
+            id="panel-electricity"
+            aria-labelledby="heading-electricity"
+          >
+            <h3 id="heading-electricity" class="topic-heading">
+              Electricity &amp; circuits
+            </h3>
+            <div class="law-cards">
+              <article class="law-card">
+                <h4>Ohm’s law</h4>
+                <p>
+                  For an ohmic component under constant physical conditions,
+                  voltage equals current multiplied by resistance.
+                </p>
+                <div class="law-formula">V = IR</div>
+                <p class="law-example">
+                  <strong>Example</strong>A current of 2 A through a 3 Ω
+                  resistor requires 6 V.
+                </p>
+              </article>
+              <article class="law-card">
+                <h4>Electrical power</h4>
+                <p>
+                  Power tells us how quickly electrical energy is transferred.
+                  Multiply voltage by current to find the power.
+                </p>
+                <div class="law-formula">P = VI</div>
+                <p class="law-example">
+                  <strong>Example</strong>A device drawing 2 A from a 12 V
+                  supply uses 24 W.
+                </p>
+              </article>
+              <article class="law-card">
+                <h4>Electric charge</h4>
+                <p>
+                  For a constant current, the charge passing a point equals the
+                  current multiplied by the elapsed time.
+                </p>
+                <div class="law-formula">Q = It</div>
+                <p class="law-example">
+                  <strong>Example</strong>A current of 3 A flowing for 4 seconds
+                  transfers 12 C of charge.
+                </p>
+              </article>
+            </div>
+          </section>
+          <section
+            class="topic-panel"
+            id="panel-heat"
+            aria-labelledby="heading-heat"
+          >
+            <h3 id="heading-heat" class="topic-heading">
+              Heat &amp; temperature
+            </h3>
+            <div class="law-cards">
+              <article class="law-card">
+                <h4>Heating a material</h4>
+                <p>
+                  When no phase change occurs, the heat needed depends on mass,
+                  specific heat capacity, and temperature change.
+                </p>
+                <div class="law-formula">Q = mcΔT</div>
+                <p class="law-example">
+                  <strong>Example</strong>Heating 1 kg of water by 1°C takes
+                  about 4,180 J.
+                </p>
+              </article>
+              <article class="law-card">
+                <h4>First law of thermodynamics</h4>
+                <p>
+                  Energy is conserved. A system’s internal energy increases when
+                  heat enters it and decreases when it does work on its
+                  surroundings.
+                </p>
+                <div class="law-formula">ΔU = Q − W</div>
+                <p class="law-example">
+                  <strong>Example</strong>If a gas receives 100 J of heat and
+                  does 30 J of work, its internal energy rises by 70 J.
+                </p>
+              </article>
+              <article class="law-card">
+                <h4>Ideal gas law</h4>
+                <p>
+                  For an ideal gas, pressure, volume, temperature, and amount of
+                  gas are related. Temperature must be measured in kelvin.
+                </p>
+                <div class="law-formula">pV = nRT</div>
+                <p class="law-example">
+                  <strong>Example</strong>In a sealed rigid container, doubling
+                  an ideal gas’s temperature in kelvin doubles its pressure.
+                </p>
+              </article>
+            </div>
+          </section>
+        </div>
+      </section>
+      <section id="principles" class="section principles">
+        <div class="section-heading">
+          <h2>Physics at different scales.</h2>
+          <p>
+            From quantum behavior to heat and light: four fields, with short
+            introductions and videos.
+          </p>
+        </div>
+        <div class="bento">
+          <article class="principle quantum">
+            <video
+              class="principle-video"
+              muted
+              playsinline
+              preload="none"
+              poster="assets/quantum-poster.jpg"
+              aria-label="Abstract particle waves: artistic illustration, not a physics simulation"
+              autoplay
+              loop
+            >
+              <source src="assets/quantum-video.mp4" type="video/mp4" />
+            </video>
+            <div class="card-copy">
+              <span class="equation">Δx · Δp ≥ ℏ / 2</span>
+              <h3>Quantum mechanics</h3>
+              <p>
+                A quantum state describes probabilities for measurement
+                outcomes, rather than a single predetermined classical
+                trajectory.
+              </p>
+            </div>
+          </article>
+          <article class="principle relativity">
+            <video
+              class="principle-video"
+              muted
+              playsinline
+              preload="none"
+              poster="assets/relativity-poster.jpg"
+              aria-label="Abstract particle waves: artistic illustration, not a physics simulation"
+              autoplay
+              loop
+            >
+              <source src="assets/relativity-video.mp4" type="video/mp4" />
+            </video>
+            <div class="card-copy">
+              <h3>General relativity</h3>
+              <p>
+                Mass-energy influences spacetime curvature. That geometry
+                governs free-fall motion.
+              </p>
+            </div>
+          </article>
+          <article class="principle thermo">
+            <video
+              class="principle-video"
+              muted
+              playsinline
+              preload="none"
+              poster="assets/thermo-poster.jpg"
+              aria-label="Boiling water"
+              autoplay
+              loop
+            >
+              <source src="assets/thermo-video.mp4" type="video/mp4" />
+            </video>
+            <div class="card-copy">
+              <h3>Thermodynamics</h3>
+              <p>
+                Heating water transfers energy. At its boiling point, added heat
+                drives the change from liquid to vapor.
+              </p>
+            </div>
+          </article>
+          <article class="principle astro">
+            <video
+              class="principle-video"
+              muted
+              playsinline
+              preload="none"
+              poster="assets/earth-poster.jpg"
+              aria-label="Rotating Earth"
+              autoplay
+              loop
+            >
+              <source src="assets/earth-hd.mp4" type="video/mp4" />
+            </video>
+            <div class="card-copy">
+              <span class="equation">8 min 20 sec</span>
+              <h3>Astrophysics</h3>
+              <p>
+                Sunlight takes approximately eight minutes and twenty seconds to
+                reach Earth. Looking outward is looking backward in time.
+              </p>
+            </div>
+          </article>
+        </div>
+        <p class="principle-credit">
+          Video footage from
+          <a href="https://www.pexels.com/">Pexels</a>. Abstract clips are
+          artistic illustrations, not scientific simulations.
+        </p>
+      </section>
+      <section
+        id="physicists"
+        class="section physicists"
+        aria-labelledby="physicists-title"
+      >
+        <div class="section-heading">
+          <h2 id="physicists-title">The people behind the ideas.</h2>
+          <p>
+            Meet six thinkers whose discoveries changed how we understand the
+            physical world.
+          </p>
+        </div>
+        <div class="physicist-grid">
+          <article class="physicist-profile">
+            <img
+              class="physicist-portrait"
+              src="assets/isaac-newton.jpg"
+              alt="Portrait of Isaac Newton"
+              width="330"
+              height="440"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="physicist-heading">
+              <h3>Isaac Newton</h3>
+              <span class="physicist-years">1643–1727</span>
+            </div>
+            <p class="physicist-field">Motion &amp; gravity</p>
+            <p>
+              Formulated three laws of motion and the law of universal
+              gravitation, connecting everyday motion with the motion of
+              planets.
+            </p>
+          </article>
+          <article class="physicist-profile">
+            <img
+              class="physicist-portrait"
+              src="assets/michael-faraday.jpg"
+              alt="Portrait of Michael Faraday"
+              width="330"
+              height="440"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="physicist-heading">
+              <h3>Michael Faraday</h3>
+              <span class="physicist-years">1791–1867</span>
+            </div>
+            <p class="physicist-field">Electromagnetic induction</p>
+            <p>
+              Discovered that a changing magnetic field can induce an electric
+              current—the principle behind electric generators.
+            </p>
+          </article>
+          <article class="physicist-profile">
+            <img
+              class="physicist-portrait"
+              src="assets/james-clerk-maxwell.jpg"
+              alt="Portrait of James Clerk Maxwell"
+              width="330"
+              height="440"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="physicist-heading">
+              <h3>James Clerk Maxwell</h3>
+              <span class="physicist-years">1831–1879</span>
+            </div>
+            <p class="physicist-field">Electricity, magnetism &amp; light</p>
+            <p>
+              United electricity and magnetism in a mathematical theory and
+              showed that light is an electromagnetic wave.
+            </p>
+          </article>
+          <article class="physicist-profile">
+            <img
+              class="physicist-portrait"
+              src="assets/marie-curie.jpg"
+              alt="Portrait of Marie Curie"
+              width="330"
+              height="440"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="physicist-heading">
+              <h3>Marie Curie</h3>
+              <span class="physicist-years">1867–1934</span>
+            </div>
+            <p class="physicist-field">Radioactivity</p>
+            <p>
+              Pioneered research into radioactivity and, with Pierre Curie,
+              discovered polonium and radium. She received Nobel Prizes in both
+              physics and chemistry.
+            </p>
+          </article>
+          <article class="physicist-profile">
+            <img
+              class="physicist-portrait"
+              src="assets/albert-einstein.jpg"
+              alt="Portrait of Albert Einstein"
+              width="330"
+              height="440"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="physicist-heading">
+              <h3>Albert Einstein</h3>
+              <span class="physicist-years">1879–1955</span>
+            </div>
+            <p class="physicist-field">Relativity &amp; quantum physics</p>
+            <p>
+              Developed special and general relativity. His explanation of the
+              photoelectric effect helped establish the quantum nature of light.
+            </p>
+          </article>
+          <article class="physicist-profile">
+            <img
+              class="physicist-portrait"
+              src="assets/emmy-noether.jpg"
+              alt="Portrait of Emmy Noether"
+              width="330"
+              height="440"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="physicist-heading">
+              <h3>Emmy Noether</h3>
+              <span class="physicist-years">1882–1935</span>
+            </div>
+            <p class="physicist-field">Symmetry &amp; conservation</p>
+            <p>
+              Showed how continuous symmetries of a physical system lead to
+              conservation laws. Time-translation symmetry, for example, is
+              linked to conservation of energy.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section id="notes" class="section notes" aria-labelledby="motion-title">
+        <figure class="spring-video">
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="assets/spring-poster.jpg"
+            aria-label="Real elastic pendulum experiment showing a mass bouncing and swinging"
+          >
+            <source src="assets/spring-experiment.mp4" type="video/mp4" />
+            <a href="assets/spring-experiment.mp4"
+              >Watch the spring experiment</a
+            >
+          </video>
+          <figcaption>
+            Real elastic pendulum: bouncing and swinging together.<br />
+            Video by
+            <a
+              href="https://commons.wikimedia.org/wiki/File:ElasticPendulum.webm"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Tomasz59 / Wikimedia Commons</a
+            >
+            ·
+            <a
+              href="https://creativecommons.org/licenses/by-sa/4.0/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >CC BY-SA 4.0</a
+            >.<br />
+            Resized and compressed; audio removed.
+          </figcaption>
+        </figure>
+        <div class="notes-copy">
+          <h2 id="motion-title">A spring in motion.</h2>
+          <p>
+            A spring stores energy when you stretch it. Let go, and that energy
+            becomes motion as the mass moves back toward equilibrium.
+          </p>
+          <div class="big-equation">F = −kx</div>
+          <p>
+            Hooke’s law describes an ideal spring within its elastic range. The
+            restoring force is proportional to displacement and points in the
+            opposite direction. With no friction or air resistance, the mass
+            keeps oscillating.
+          </p>
+          <div class="note-detail mono">
+            <span>F: FORCE · k: SPRING STIFFNESS · x: DISPLACEMENT</span>
+            <span>ELASTICITY &amp; SIMPLE HARMONIC MOTION</span>
+          </div>
+        </div>
+      </section>
+      <section
+        id="simulations"
+        class="section simulations"
+        aria-labelledby="simulations-title"
+      >
+        <div class="section-heading">
+          <h2 id="simulations-title">Try an interactive experiment.</h2>
+          <p>
+            Change the conditions and see what happens in four interactive PhET
+            simulations.
+          </p>
+        </div>
+        <div class="simulation-grid">
+          <article class="simulation-card">
+            <div class="simulation-copy">
+              <h3>Gravity and Orbits</h3>
+              <p>
+                Explore how gravity shapes the paths of planets, moons, and
+                satellites.
+              </p>
+            </div>
+            <iframe
+              src="https://phet.colorado.edu/sims/html/gravity-and-orbits/latest/gravity-and-orbits_en.html"
+              title="PhET simulation: Gravity and Orbits"
+              width="800"
+              height="600"
+              loading="lazy"
+              allow="fullscreen"
+              allowfullscreen
+            ></iframe>
+            <a
+              class="simulation-link"
+              href="https://phet.colorado.edu/sims/html/gravity-and-orbits/latest/gravity-and-orbits_en.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Open Gravity and Orbits in a new tab ↗</a
+            >
+          </article>
+          <article class="simulation-card">
+            <div class="simulation-copy">
+              <h3>My Solar System</h3>
+              <p>
+                Build a solar system and experiment with masses, positions, and
+                velocities.
+              </p>
+            </div>
+            <iframe
+              src="https://phet.colorado.edu/sims/html/my-solar-system/latest/my-solar-system_en.html"
+              title="PhET simulation: My Solar System"
+              width="800"
+              height="600"
+              loading="lazy"
+              allow="fullscreen"
+              allowfullscreen
+            ></iframe>
+            <a
+              class="simulation-link"
+              href="https://phet.colorado.edu/sims/html/my-solar-system/latest/my-solar-system_en.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Open My Solar System in a new tab ↗</a
+            >
+          </article>
+          <article class="simulation-card">
+            <div class="simulation-copy">
+              <h3>Gravity Force Lab: Basics</h3>
+              <p>
+                Change mass and distance to investigate gravitational
+                attraction.
+              </p>
+            </div>
+            <iframe
+              src="https://phet.colorado.edu/sims/html/gravity-force-lab-basics/latest/gravity-force-lab-basics_en.html"
+              title="PhET simulation: Gravity Force Lab: Basics"
+              width="800"
+              height="600"
+              loading="lazy"
+              allow="fullscreen"
+              allowfullscreen
+            ></iframe>
+            <a
+              class="simulation-link"
+              href="https://phet.colorado.edu/sims/html/gravity-force-lab-basics/latest/gravity-force-lab-basics_en.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Open Gravity Force Lab: Basics in a new tab ↗</a
+            >
+          </article>
+          <article class="simulation-card">
+            <div class="simulation-copy">
+              <h3>Greenhouse Effect</h3>
+              <p>
+                Explore how sunlight and infrared radiation interact with the
+                atmosphere.
+              </p>
+            </div>
+            <iframe
+              src="https://phet.colorado.edu/sims/html/greenhouse-effect/latest/greenhouse-effect_en.html"
+              title="PhET simulation: Greenhouse Effect"
+              width="800"
+              height="600"
+              loading="lazy"
+              allow="fullscreen"
+              allowfullscreen
+            ></iframe>
+            <a
+              class="simulation-link"
+              href="https://phet.colorado.edu/sims/html/greenhouse-effect/latest/greenhouse-effect_en.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Open Greenhouse Effect in a new tab ↗</a
+            >
+          </article>
+        </div>
+        <p class="simulation-credit">
+          Simulations by
+          <a
+            href="https://phet.colorado.edu/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >PhET Interactive Simulations, University of Colorado Boulder</a
+          >.
+        </p>
+      </section>
+      <section id="experiment" class="section calculator-section">
+        <div class="section-heading">
+          <h2>A calculator for the numbers.</h2>
+          <p>Two numbers. Four operations.<br />Keep the calculation simple.</p>
+        </div>
+        <div class="calculator">
+          <div class="calculator-head mono">
+            <span>Four basic operations</span><span>+ / − / × / ÷</span>
+          </div>
+          <form id="calculator-form" class="calculator-form">
+            <div class="calculator-fields">
+              <label for="first-number"
+                >First number
+                <input
+                  id="first-number"
+                  type="number"
+                  step="any"
+                  required
+                  placeholder="e.g. 12"
+                />
+              </label>
+              <label for="operation"
+                >Operation
+                <select id="operation">
+                  <option value="add">Add (+)</option>
+                  <option value="subtract">Subtract (−)</option>
+                  <option value="multiply">Multiply (×)</option>
+                  <option value="divide">Divide (÷)</option>
+                </select>
+              </label>
+              <label for="second-number"
+                >Second number
+                <input
+                  id="second-number"
+                  type="number"
+                  step="any"
+                  required
+                  placeholder="e.g. 4"
+                />
+              </label>
+            </div>
+            <button type="submit" class="button primary">
+              Calculate <span>=</span>
+            </button>
+            <div class="calculator-result">
+              <span class="mono">Result</span>
+              <output
+                id="calculator-result"
+                for="first-number operation second-number"
+                aria-live="polite"
+                >Enter two numbers to begin.</output
+              >
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="brand" href="#explore">AXIOM</a>
+      <p>Physics explained through ideas,<br />people, and experiments.</p>
+      <a class="text-link" href="#explore">Back to the beginning ↑</a>
+      <div class="footer-bottom mono">
+        <span>AN INTERACTIVE ATLAS OF PHYSICS</span
+        ><span>BUILT FOR CURIOSITY.</span>
+      </div>
+    </footer>
+  </body>
+</html>
